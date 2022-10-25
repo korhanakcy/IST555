@@ -3,13 +3,13 @@ title: "Makine Öğrenmesi (Machine Learning)"
 author: "Erdem Korhan Akçay"
 date: '2022-10-11'
 output:
+  word_document: default
   html_document: default
   pdf_document: default
-  word_document: default
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = T)
 ```
 __1) Makine Öğrenmesi Nedir?__
 
@@ -17,7 +17,7 @@ Makine öğrenmesi, bilgisayarların verilerden çıkarım yaparak, öğrenim sa
 
 Arthur Samuel'in de dediği gibi makine öğrenmesi bilgisayarlara açıkça programlanmadan öğrenebilme yeteneği verildiği bir çalışma alanıdır.
 
-Aynı zamanda mühendislik tanımını yapacak olursak, bilgisayar amacına (T) göre deneyim kazanarak (E) öğrenir ve performans ölçüsüyle (P) değerlendirir, 
+Aynı zamanda mühendislik tanımını yapacak olursak, bilgisayar amacına (T) göre deneyim kazanarak (E) öğrenir ve performans ölçüsüyle (P) değerlendirir. 
 
 Örnek verecek olursak, spam filtreleme işlemi bir makine öğrenmesi uygulamasıdır, spam olarak işaretlenmiş e-postalardan ve normal e-postalardan neyin spam olup olmadığını öğrenir. Bu örnekte sistemin öğrenmesi için kullandığı veri seti "Eğitim seti" olarak adlandırılır. Burada, görevimiz -amacımız- (T) yeni gelecek e-postaların spam kararını vermek, deneyimimiz (E) eğitim verisi ve performans ölçüsü (P)'dir. Verilen örnekte performans ölçüsü doğru sınıflandırılmış e-postaların oranı olabilir. Aynı zamanda performans ölçüsüne __doğruluk__ (accuracy) denir ve genel olarak sınıflandırma görevlerinde kullanılır.
 
@@ -34,21 +34,23 @@ Makine öğrenmesinde uygulanabilecek bir çok model vardır. Fakat bunları gen
 
 •Bilinen veri noktalarını, yeni veri noktalarıyla eski veri noktalarını karşılaştırarak öğrenen veya bunun yerine eğitim setindeki verilerin yapılarını tanımlayıp tahmine dayalı bir model oluşturan. (Örnek Tabanlı ve Model Tabanlı Öğrenme)
 
-Bu ders kapsamında Denetimli, Denetimsiz ve Pekiştirmeli Öğrenme anlatılacaktır.
+Bu ders kapsamında Denetimli, Denetimsiz ve Pekiştirmeli Öğrenme incelenecektir.
 
 
 __1.2) Denetimli Öğrenme(Supervised Learning):__
 
-Denetimli öğrenmede algoritmayı beslediğimiz eğitim verileri, etiketlenen(labels) verileri ve istenen çözümleri içerir.
+Denetimli öğrenmede algoritmayı beslediğimiz eğitim verileri(training data), etiketlenen(labels) verileri ve istenen çözümleri içerir.
 
-![__Şekil 1.2.1 Denetimli öğrenmede etiketlenmiş veri seti (Spam sınıflandırma örneği)__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız1.png)
+![__Şekil 1.1 Denetimli öğrenmede etiketlenmiş veri seti (Spam sınıflandırma örneği)__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız1.png)
 
 
-İki çeşit denetimli öğrenme vardır. Bunlardan biri sınıflandırma, spam sınıflandırması bunun güzel bir örneğidir. Bir çok örnek e-postalardan (spam olan, olmayan) öğrenir ve onları nasıl sınıflandıracağını öğrenir.
+İki çeşit denetimli öğrenme vardır. Bunlardan biri sınıflandırma, spam sınıflandırması bunun güzel bir örneğidir. Bir çok örnek e-postalardan (spam olan, olmayan) öğrenir ve onları nasıl sınıflandırılacağını öğrenir.
 
 Bir diğer çeşit ise sayıların tahmini, araba fiyatlandırması buna bir örnek olabilir. Verilen özellikler (km, yaş, marka vb.) değişken olarak adlandırılır. Buna benzer algoritmalar regresyon olarak adlandırılır. Modeli eğitmek için yeterince araba verisine ihtiyaç vardır.
 
-![__Şekil 1.2.2 Regresyon örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız2.png)
+
+#fotoğrafı açıkla
+![__Şekil 1.2 Regresyon örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız2.png)
 
 Aşağıda bir kaç önemli ve çok kullanılan denetimli öğrenme algoritmaları gösterilmektedir:
 
@@ -58,7 +60,7 @@ Aşağıda bir kaç önemli ve çok kullanılan denetimli öğrenme algoritmalar
 
 • Lojistik Regresyon (Logistic Regression)
 
-• Yardım Destek Makineleri (Support Vector Machines)
+• Destek Vektör Makineleri (Support Vector Machines)
 
 • Karar Ağaçları ve Rassal Ormanlar (Decision Trees and Random Forests)
 
@@ -99,26 +101,27 @@ __• Birliktelik Kuralı(Association Rule)__
   
 Örneklerini verecek olursak, bir blog sitesine giren ziyaretçilerin hangi gruba ait olduğunun tespitinde kümeleme algoritmasını kullanabiliriz. 
 
-![__Şekil 1.3.1 Kümeleme örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız5.png)
+![__Şekil 1.3 Kümeleme örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız5.png)
 
 Aynı zamanda görselleştirme(visualization) denetimsiz öğrenme algoritmalar için iyi bir örnektir. Algoritmayı karmaşık(complex) ve etiketlenmemiş(unlabeled) veriyle besledikten sonra bizlere 2D veya 3D çizimlerini(plot) gösterir. Bu algoritmalar mümkün olduğu kadar yapıyı korumaya çalışır.
 
-![__Şekil 1.3.2 Görselleştirme örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız4.png)
-Boyut azaltmada ise, amacımız veri hakkında fazla bilgi kaybetmeden olabildiğince sadeleştirmek. Bunu yapmanın yollarından biri bir kaç korele özelliği birara da tutmak. Örnek verecek olursak arabanın yaptığı kilometresi, yaşıyla doğru orantılı olabilir, bu şekilde boyut azaltma algoritmasında bu özellikleri bir araya getirir.
+![__Şekil 1.4 Görselleştirme örneği__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız4.png)
+
+Boyut azaltmada ise, amacımız veri hakkında fazla bilgi kaybetmeden olabildiğince sadeleştirmektir. Bunu yapmanın yollarından biri bir kaç ilişkili özelliği bir arada tutmaktır. Örnek verecek olursak arabanın yaptığı kilometresi, yaşıyla doğru orantılı olabilir, bu şekilde boyut azaltma algoritmasında bu özellikleri bir araya getirir.
 
     Başka bir makine algoritmasını kullanmadan önce boyut azaltma algoritmasıyla eğitim setinin boyutunu azaltmak, daha hızlı, daha az ram kullanarak sonuca varırız ve bazı durumlarda daha iyi performans gösterebilir.  
     
 __1.4)Pekiştirmeli Öğrenme (Reinforcement Learning):__
 
-Pekiştirmeli öğrenme diğerlerine göre farklıdır. Öğrenme yapısını ajan(agent) diye kodluyoruz. Ajan çevreyi ve seçenekleri gözlemler ve aksiyona(action) geçer. Bu aksiyondan sonra ödül(reward) kazanır veya ceza(penalty) puanı yer. Bu mekanizmayla en iyi stratejiyi geliştiresiye kadar öğrenir, buna da 	zeka kıvraklığı (policy) diyebiliriz, mümkün olan en kısa zamanda olabildiğince çok ödül kazanmaya çalışır. 
+Pekiştirmeli öğrenme diğerlerine göre farklıdır. Öğrenme yapısını ajan(agent) diye kodluyoruz. Ajan çevreyi ve seçenekleri gözlemler ve aksiyona(action) geçer. Bu aksiyondan sonra ödül(reward) kazanır veya ceza(penalty) puanı yer. Bu mekanizmayla en iyi stratejiyi geliştirene kadar öğrenir, buna da 	zeka kıvraklığı (policy) diyebiliriz, mümkün olan en kısa zamanda olabildiğince çok ödül kazanmaya çalışır. 
 
-![__Şekil 1.4.1 Pekiştirmeli Öğrenme__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız3.png)
+![__Şekil 1.5 Pekiştirmeli Öğrenme__ ](C:\Users\E. Korhan AKÇAY\Desktop\IST-555\resim\Adsız3.png)
 
 
 Örnek olarak, bir çok robot yürümeyi öğrenmek için pekiştirmeli öğrenme algoritmaları kullanıyor. Aynı zamanda DeepMind’s AlphaGo programı pekiştirmeli öğrenme için iyi bir örnektir. AlphaGo Mayıs 2017'de Go oyununda dünya şampiyonu Ke Jie'ye karşı kazandı. Bunu milyonlarca oyunu analiz ederek ve kendi kendine oynayarak stratejisini geliştirerek başardı. 
 
 
-__İstattistikle İlişkisi Nedir?__
+__İstatistikle İlişkisi Nedir?__
 
 İstatistiksel öğrenme, makine öğrenmesinin amaçları çok benzese de aralarındaki en büyük fark çıkarımdan(inference) gelmektedir. istatistiksel öğrenme verideki değişkenler arasındaki ilişki ve açıklayıcılığı ile ilgilenirken, makine öğrenmesi tahminlemenin doğruluk oranı(accuracy) ile ilgilenmektedir. Ayrıca makine öğrenmesinde ki algoritma çeşitliliği, yan ve varyans dengesinin esnek olması ve çok yüksek boyutlu verilerde tahminleme gücünün yüksek olması gibi avantajları ile büyük veri dünyasında çok hızlı şekilde yerini almasını sağladı.
 

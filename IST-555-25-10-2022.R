@@ -1,6 +1,7 @@
 #IS
 #R İLE VERİ BİLİMİ 
  #140 ile 195 arasındaki sayılardan 1000 adet veri üretmek
+set.seed(2510)
 x <- sample(140:195, 1000, replace = T)
 
  #male(m) ve female(f)'den 1000 adet veri üretmek

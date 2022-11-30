@@ -22,6 +22,6 @@ yhat <- fitted.values(lm(weight ~ x))
 #residuals
 sigma=0
 for (i in 1:1000){
-  sigma = sigma + ((weight[i]-yhat[i])**2/999)
+  sigma = sigma + ((weight[i]-yhat[i])**2/998)
 }
 sqrt(sigma)

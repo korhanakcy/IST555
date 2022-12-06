@@ -35,12 +35,26 @@ sqrt(sigma)
 
 #r2
 y_hat_y_i <- (yhat-mean(weight))
-y_hat_y_i_sq <- (y_hat_y_i)**2
+ssres <- (y_hat_y_i)**2
 
 y_i_y_mean <- (weight - mean(weight))
-y_i_y_mean_sq <- (y_i_y_mean)**2
+sst <- (y_i_y_mean)**2
 
-r2 <- (sum(y_hat_y_i_sq)/sum(y_i_y_mean_sq))
+r2 <- (sum(ssres)/sum(sst))
 r2
 
-#
+
+#F-statistiscs
+sst <- (t(weight)%*%weight)-((sum(weight))**2/1000)
+sst  
+
+ssres <- (t(weight)%*%weight)-t(hatb)%*%t(X)%*%weight
+ssres
+
+ssreg <- sst-ssres
+
+msreg <- (ssreg)
+msres <- ssres/998
+
+F0 <- msreg/msres
+F0
